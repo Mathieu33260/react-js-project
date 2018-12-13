@@ -1,0 +1,56 @@
+{
+  "name": "react-js-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bundle.js",
+  "scripts": {
+    "test": "jest .",
+    "build": "browserify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d",
+    "watch": "watchify src/vanilla/main.js -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v",
+    "build:jsx": "browserify src/react/main.jsx -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d",
+    "watch:jsx": "watchify src/react/main.jsx -o bundle.js -t [ babelify --presets [ @babel/env ] ] -d -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mathieu33260/react-js-project.git"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "jest --findRelatedTests"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mathieu33260/react-js-project/issues"
+  },
+  "homepage": "https://github.com/Mathieu33260/react-js-project#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babelify": "^10.0.0",
+    "eslint": "^5.8.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^1.1.3",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.0.4"
+  },
+  "dependencies": {
+    "moment": "^2.22.2",
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
+  }
+}
