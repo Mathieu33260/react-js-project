@@ -85,3 +85,11 @@ li.expanded .extra{
 .fav {
     background-color: aqua;
 }
+
+.selected {
+    background-color: red;
+}
+
+.isRt {
+    background-color: dodgerblue;
+}

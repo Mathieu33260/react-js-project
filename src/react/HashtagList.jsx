@@ -5,8 +5,11 @@ export default function HashtagList (props) {
     return (<div>
         {
             props.hashtagList.map(function(hashtag, index) {
-                return <HashtagBtn key={index} filter={props.filter} hashtag={hashtag}/>
+                return <HashtagBtn key={index} isSelected={props.hashtagsSelected.includes(hashtag)}
+                                   filter={props.filter} hashtag={hashtag}/>
             })
         }
-    </div>);
+            <button onClick={props.filter} value={null}>Supprimer les hashtags</button>
+    </div>
+    );
 }
